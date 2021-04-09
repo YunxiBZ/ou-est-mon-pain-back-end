@@ -1,0 +1,7 @@
+%syntax-version=1.0.0
+%project=ou-est-mon-pain
+
+init.sql 2021-03-03T13:12:50Z Contoqueren <assageant-flyff@hotmail.fr> # ajouts des tables
+category_product_insertion 2021-03-03T13:23:49Z Contoqueren <assageant-flyff@hotmail.fr> # Ajout de data produits et categories
+admin 2021-03-10T08:53:08Z Contoqueren <assageant-flyff@hotmail.fr> # Changement du role admin d'un compte
+fake_data 2021-03-11T09:24:52Z Contoqueren <assageant-flyff@hotmail.fr> # Des données fausses

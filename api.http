@@ -1,0 +1,235 @@
+@protocol= http
+@domainname= localhost
+@port= {{$dotenv PORT}}
+@path=api
+@baseUrl = {{protocol}}://{{domainname}}:{{port}}/{{path}}
+
+### Route GET /categories
+
+GET {{baseUrl}}/categories
+
+### Route GET /products
+
+GET {{baseUrl}}/products
+
+### Route GET /product/:id
+
+GET {{baseUrl}}/product/11
+
+### Route POST /signup
+
+POST {{baseUrl}}/signup
+Content-Type: application/json
+
+{
+    "email": "jdqsdqsdzqzqy@orange.fr",
+    "password": "KjfY5h2J448Bzw",
+    "passwordConfirm" : "KjfY5h2J448Bzw",
+    "last_name": "Bataya",
+    "first_name": "Hernandez",
+    "phone_number": "0602235645"
+}
+
+### Route POST /login
+
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+    "email": "jaybi@orange.fr",
+    "password": "bla"
+}
+
+### Route POST /category
+
+POST {{baseUrl}}/category
+Content-Type: application/json
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOjEsImlhdCI6MTYxNDk1Mjk5MCwiZXhwIjoxNjE0OTYzNzkwfQ.-Tbyt2fiTrXwgDMWahjlFvf8oiAbNkqM1F4-ErWy8Z0
+
+{
+    "label": "Sandwich",
+    "image": "Un bon petit burger américain là"
+}
+
+### Route PUT /category
+
+PUT {{baseUrl}}/category
+Content-Type: application/json
+
+{
+    "id":"5",
+    "label": "Sandwich",
+    "image": "Un bon sandwich au paté"
+}
+
+### Route PUT /category
+
+DELETE {{baseUrl}}/category
+Content-Type: application/json
+
+{
+    "id":"4" 
+}
+
+### Route POST /product
+
+POST {{baseUrl}}/product
+Content-Type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOjMsImlhdCI6MTYxNTU1MjcxMywiZXhwIjoxNjE1NTYzNTEzfQ.jjzWlmcmM3orK7so5rjzhrWmDdlQN_mblVzX1A424Lg
+
+{
+    "title": "Panini Nutella",
+    "description": "Le meilleur panini du monde",
+    "price": 1.95,
+    "image": "image d'huile de palme",
+    "categories" : [25]
+}
+
+### Route PUT /product
+
+PUT {{baseUrl}}/product
+Content-Type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOjMsImlhdCI6MTYxNTU1MjcxMywiZXhwIjoxNjE1NTYzNTEzfQ.jjzWlmcmM3orK7so5rjzhrWmDdlQN_mblVzX1A424Lg
+
+{
+    "id" : 12,
+    "title": "AIEAIE",
+    "description": "Incroyable panini du monde",
+    "price": 1.95,
+    "image": "image d'huile de palme",
+    "categories" : [25]
+}
+
+### Route DELETE /product
+
+DELETE {{baseUrl}}/product
+Content-Type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOjMsImlhdCI6MTYxNTQ3MDE2NiwiZXhwIjoxNjE1NDgwOTY2fQ.U38N8I00nvli8dqD8G-VcNc98E0suWZHxD_HvL7Yr6E
+
+{
+    "id" : 19
+}
+
+### Route POST /allergen
+
+POST {{baseUrl}}/allergen
+Content-Type: application/json
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOjEsImlhdCI6MTYxNDk1Mjk5MCwiZXhwIjoxNjE0OTYzNzkwfQ.-Tbyt2fiTrXwgDMWahjlFvf8oiAbNkqM1F4-ErWy8Z0
+
+{
+    "name": "moutarde",
+    "color": "#ff00ff"
+}
+
+### Route PUT /allergen
+
+PUT {{baseUrl}}/allergen
+Content-Type: application/json
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOjEsImlhdCI6MTYxNDk1Mjk5MCwiZXhwIjoxNjE0OTYzNzkwfQ.-Tbyt2fiTrXwgDMWahjlFvf8oiAbNkqM1F4-ErWy8Z0
+
+{
+    "id":1,
+    "name": "moutarde",
+    "color": "#ffe436"
+}
+
+### Route DELETE /allergen
+
+DELETE {{baseUrl}}/allergen
+Content-Type: application/json
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOjEsImlhdCI6MTYxNDk1Mjk5MCwiZXhwIjoxNjE0OTYzNzkwfQ.-Tbyt2fiTrXwgDMWahjlFvf8oiAbNkqM1F4-ErWy8Z0
+
+{
+    "id":1
+}
+
+### Route GET /account
+
+GET {{baseUrl}}/account
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOjIsImlhdCI6MTYxNTQ2NTQ2NCwiZXhwIjoxNjE1NDc2MjY0fQ.f8D-9DrsBtBQt_H0KVX89Ia9MwwPOhjhwESLSaMSpOI
+### Route PUT /account
+
+PUT {{baseUrl}}/account
+Content-Type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOjIsImlhdCI6MTYxNTQ2NTQ2NCwiZXhwIjoxNjE1NDc2MjY0fQ.f8D-9DrsBtBQt_H0KVX89Ia9MwwPOhjhwESLSaMSpOI
+
+{
+    "email": "jadzqdqi@orange.fr",
+    "first_name": "jasdadsqd",
+    "last_name": "dzqdzdqdqb",
+    "phone_number": "05158"
+}
+
+### Route PUT /password-account
+
+PUT {{baseUrl}}/password-account
+Content-Type: application/json
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOjEsImlhdCI6MTYxNTE5ODU4MSwiZXhwIjoxNjE1MjA5MzgxfQ.S3dn7nUdFTrcoXvrxRdpxWKRrTqVj37_Cw8lo7VHwus
+
+{
+    "password":"blu",
+    "passwordConfirm": "blu"
+}
+
+### Route DELETE /account
+
+DELETE {{baseUrl}}/account
+Content-Type: application/json
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOjIsImlhdCI6MTYxNTE5OTA0NSwiZXhwIjoxNjE1MjA5ODQ1fQ.D1lx13-oIpGM64Topi4tnrQFNekiJ3fEHtq6qaigsBg
+
+{
+    "id":2
+}
+
+### Route GET /client-orders
+
+GET {{baseUrl}}/client-orders
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOjEsImlhdCI6MTYxNTM4Mzk2NiwiZXhwIjoxNjE1Mzk0NzY2fQ.ntMmYEMqLN73L1aGnuyPlEG4X1G0GQ3e_h_PsuS_DlM
+
+### Route POST /order
+
+POST {{baseUrl}}/order
+Content-Type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOjMsImlhdCI6MTYxNTU2MjAzOSwiZXhwIjoxNjE1NTcyODM5fQ.o9BDgF71bPqef_gJgknT5dcysAGDop1tIbzB-L3q_Q8
+
+{
+    "reception_date" : "2021-03-12",
+    "total_price" : 14.20,
+    "products" : [
+        {"id" :11,
+        "quantity" : 2},
+        {"id": 12,
+        "quantity": 5},
+        {"id": 15,
+        "quantity": 1}
+    ]
+}
+
+### Route GET /daily-orders
+
+GET {{baseUrl}}/daily-orders
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOjMsImlhdCI6MTYxNTU2MjAzOSwiZXhwIjoxNjE1NTcyODM5fQ.o9BDgF71bPqef_gJgknT5dcysAGDop1tIbzB-L3q_Q8
+
+### Route POST /product-score
+
+POST {{baseUrl}}/product-score
+Content-Type: application/json
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50SWQiOjEsImlhdCI6MTYxNTI4NjY1NywiZXhwIjoxNjE1Mjk3NDU3fQ.wzliyO8dkx5zSQuy9KIeeEndOjMbZIhNA_cLtku7fi8
+
+{
+    "mark": 5,
+    "account_id": 1,
+    "id": 11
+}
+
+### Route POST /contact
+POST {{baseUrl}}/contact
+Content-Type: application/json
+
+{
+    "first_name" : "JB",
+    "last_name" : "biogoss",
+    "phone_number" : "tacru",
+    "email": "camarche@truc.com",
+    "message": "koukoulodzqidzqou stach stach"
+}
